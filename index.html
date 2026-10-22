@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>03LIB749 · Segunda evaluación parcial — Universidad La Salle Bajío</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231b2a63'/%3E%3Cpath d='M9 23V9h3.4v11.2H21V23z' fill='%23fff'/%3E%3Crect x='22' y='9' width='2.6' height='14' fill='%23c8102e'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/styles.css?v=e46f0b7230">
+</head>
+<body>
+
+<!-- ==================== BARRA SUPERIOR (examen en curso) ==================== -->
+<header class="barra" id="barra" hidden>
+  <div class="barra-int">
+    <span class="marca">03LIB749 · Parcial 2</span>
+    <span class="quien" id="barraQuien"></span>
+    <span class="sep"></span>
+    <span class="chip" id="chipProgreso">0 / 20 contestados</span>
+    <span class="chip" id="chipReloj">00:00</span>
+    <button class="secundario" type="button" id="btnIrCierre">Finalizar</button>
+  </div>
+</header>
+
+<main class="contenedor">
+
+  <!-- ==================== PANTALLA 1 · PORTADA ==================== -->
+  <section id="pantallaPortada">
+    <div class="portada">
+      <div class="cinta"></div>
+      <div class="cuerpo">
+        <img class="logo" id="logo" alt="Universidad La Salle Bajío — Facultad de Ingenierías y Tecnologías">
+        <h1>INSTRUMENTACIÓN BIOMÉDICA II</h1>
+        <h2 class="sub">Segunda evaluación parcial</h2>
+
+        <table class="datos">
+          <tbody>
+            <tr><th>Clave de la asignatura</th><td>03LIB749</td></tr>
+            <tr><th>Programa académico</th><td>Ingeniería Biomédica · Septimo semestre · Grupo 701</td></tr>
+            <tr><th>Periodo</th><td>Agosto - Diciembre 2026</td></tr>
+            <tr><th>Profesor</th><td>Dr. Jorge Ramón Parra Michel</td></tr>
+            <tr><th>Alcance</th><td>Unidad 2 (todos los temas) y Unidad 3 (temas 3.1 a 3.4)</td></tr>
+            <tr><th>Estructura</th><td>14 preguntas de teoría (40 pts) + 3 reactivos numéricos (40 pts) + 3 casos de análisis (20 pts) = 100 pts</td></tr>
+            <tr><th>Duración de referencia</th><td>150 minutos</td></tr>
+          </tbody>
+        </table>
+
+        <fieldset>
+          <legend>Identificación del sustentante</legend>
+          <div class="fila">
+            <div class="campo">
+              <label for="fNombre">Nombre completo (apellidos y nombres)</label>
+              <input type="text" id="fNombre" autocomplete="name" placeholder="Pérez Ramírez, Ana Sofía">
+            </div>
+            <div class="campo">
+              <label for="fMatricula">Matrícula</label>
+              <input type="text" id="fMatricula" autocomplete="off" placeholder="A00123456" spellcheck="false">
+              <div class="ayuda">La matrícula determina los datos numéricos de su examen. Verifíquela: un error aquí invalida la calificación automática.</div>
+            </div>
+          </div>
+          <div class="fila">
+            <div class="campo">
+              <label for="fGrupo">Grupo</label>
+              <input type="text" id="fGrupo" value="701">
+            </div>
+            <div class="campo">
+              <label for="fCorreo">Correo institucional (opcional)</label>
+              <input type="email" id="fCorreo" autocomplete="email" placeholder="usuario@lasallebajio.edu.mx">
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="aviso">
+          <b>Condiciones de aplicación y política de integridad</b>
+          <ul>
+            <li>Examen <b>individual</b>. Conforme a la política de uso de IA del curso, en los exámenes escritos <b>no se permite</b> el empleo de asistentes automáticos, ni consulta entre compañeros.</li>
+            <li>Se permite calculadora, formulario propio y los apuntes del curso <b>en papel o en una calculadora física</b>, salvo indicación en contrario del profesor. Usar otra ventana, pestaña o aplicación del equipo cuenta como salida del examen.</li>
+            <li>Los datos numéricos de la Sección B son <b>distintos para cada matrícula y para cada sesión</b>: si reinicia el examen, los datos cambian y el reinicio queda registrado. Copiar el resultado de un compañero produce una respuesta incorrecta y trazable.</li>
+            <li>Esta página registra, para efectos de integridad académica, el número de copiados y pegados, las salidas de la ventana, el tiempo fuera de ella y la duración de la sesión. <b>Ese registro se imprime en el PDF que usted entrega.</b></li>
+            <li>El examen se resuelve en pantalla completa. Se toleran 3 salidas de la ventana y 300 segundos fuera en total. Al rebasar cualquiera de los dos límites, <b>el examen se cierra</b> y el PDF se genera con lo contestado hasta ese momento. Recargar la página también cuenta como salida.</li>
+            <li>El enunciado incorpora marcas de trazabilidad. Transcribirlo a un sistema externo es detectable y conduce a datos erróneos.</li>
+            <li>Sus respuestas se guardan automáticamente en este navegador. No cambie de equipo durante el examen.</li>
+          </ul>
+        </div>
+
+        <div class="campo declaracion">
+          <input type="checkbox" id="fDeclaro">
+          <label for="fDeclaro">Declaro que resolveré este examen de manera individual, sin asistencia de terceros ni de herramientas de inteligencia artificial, y acepto las condiciones de aplicación y el registro de integridad descritos arriba.</label>
+        </div>
+
+        <div class="acciones" style="justify-content:flex-start">
+          <button class="primario grande" type="button" id="btnIniciar" disabled>Iniciar examen</button>
+        </div>
+        <div class="pendientes" id="avisoPortada"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== PANTALLA 2 · EXAMEN ==================== -->
+  <section id="pantallaExamen" hidden>
+    <div class="aviso info" id="cabeceraExamen"></div>
+
+    
+    <h2 class="seccion-titulo">Sección A · Teoría</h2>
+    <p class="seccion-desc">
+      14 reactivos · 2.85714 puntos cada uno · 40 puntos. Respuesta breve, de 3 a 6 líneas. Se evalúan la <b>idea central</b>, su <b>explicación</b> y su <b>aplicación</b> o condición de validez. Copiar una definición sin explicarla no acredita el reactivo. Responda cada inciso de forma identificable.
+    </p>
+    
+    <div id="listaTeoricos"></div>
+
+    
+    <h2 class="seccion-titulo">Sección B · Numérico</h2>
+    <p class="seccion-desc">
+      3 reactivos · 13.3333 puntos cada uno · 40 puntos. Tiempo de referencia: 5 minutos por reactivo.
+      <b>Los datos son propios de su matrícula.</b> Reporte los valores con al menos tres cifras
+      significativas y con el punto o la coma decimal indistintamente. El campo
+      <i>criterio</i> es obligatorio: en él se declara el modelo, la hipótesis y la base del cálculo;
+      un valor correcto sin criterio declarado obtiene calificación parcial.
+    </p>
+    
+    <div id="listaNumericos"></div>
+
+    
+    <h2 class="seccion-titulo">Sección C · Análisis</h2>
+    <p class="seccion-desc">
+      3 casos · 6.66667 puntos cada uno · 20 puntos. <b>Los datos son propios de su matrícula y su
+      sesión.</b> Calcule los valores que se piden y después responda los incisos con base en <b>sus</b>
+      resultados: el dictamen sobre el diseño, el mecanismo que lo gobierna y la medida concreta, con su
+      magnitud. Un análisis que no usa sus propios números no acredita el dictamen.
+    </p>
+    <div id="listaAnalisis"></div>
+    
+
+    <div class="cierre" id="bloqueCierre">
+      <h2 style="color:var(--azul);margin:0 0 6px">Finalizar y entregar</h2>
+      <p style="margin:0;font-size:14.5px">
+        Al generar el PDF el examen termina: se registra la hora de término y ya no podrá modificar las respuestas. Revise antes que todos los reactivos estén contestados. <b>El archivo PDF descargado es el único documento
+        válido de entrega</b>; súbalo a la tarea correspondiente de Microsoft Teams.
+      </p>
+      <div class="pendientes" id="avisoPendientes"></div>
+      <div class="acciones">
+        <button class="primario grande" type="button" id="btnGenerar">Generar y descargar PDF</button>
+      </div>
+      <div class="aviso exito" id="avisoDescarga" hidden></div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ==================== VELO (aviso de salida, pantalla completa, fin) ==================== -->
+<div class="velo" id="velo" hidden>
+  <div class="velo-caja" role="alertdialog" aria-modal="true" aria-labelledby="veloTitulo">
+    <h2 id="veloTitulo"></h2>
+    <div id="veloTexto"></div>
+    <div class="acciones"><button class="primario grande" type="button" id="veloBoton"></button></div>
+  </div>
+</div>
+
+<footer class="legal">
+  Universidad La Salle Bajío · Facultad de Ingenierías y Tecnologías · 03LIB749 INSTRUMENTACIÓN BIOMÉDICA II<br>
+  Documento de evaluación de uso interno. Versión del instrumento: <span id="verInstrumento"></span>
+</footer>
+
+<script src="vendor/jspdf.umd.min.js?v=e46f0b7230"></script>
+<script src="assets/logo.js?v=e46f0b7230"></script>
+<script src="assets/fuentes.js?v=e46f0b7230"></script>
+<script src="assets/banco.js?v=e46f0b7230"></script>
+<script src="assets/pdf.js?v=e46f0b7230"></script>
+<script src="assets/examen.js?v=e46f0b7230"></script>
+</body>
+</html>
